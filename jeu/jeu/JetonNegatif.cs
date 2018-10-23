@@ -8,14 +8,17 @@ namespace jeu
 {
     class JetonNegatif:Jeton
     {
-  
+        
+
         JetonNegatif()
         {
-            
+            GenererValeur();
         }
+
         public override void GenererValeur()
         {
-            int valeur = 
+            
+            int valeurJeton = genrateurJeton.Next(-4) - 2;
         }
     }
 }

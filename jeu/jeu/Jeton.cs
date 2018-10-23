@@ -8,7 +8,8 @@ namespace jeu
 {
     class Jeton : IPointable
     {
-        public int valeurJeton;
+        public int valeurJeton { get; set; }
+        public static Random genrateurJeton = new Random();
 
         public int Points {
             get { return valeurJeton; }
