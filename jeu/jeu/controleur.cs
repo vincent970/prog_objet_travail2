@@ -41,6 +41,13 @@ namespace jeu
             JoueurCourant = lesJoueurs[tour];
         }
 
+        public void genererUnObjet()
+        {
+            Array values = Enum.GetValues(typeof(TypeObjet));
+            Random random = new Random();
+            TypeObjet randomBar = (TypeObjet)values.GetValue(random.Next(values.Length));
+        }
+
     }
 
 }

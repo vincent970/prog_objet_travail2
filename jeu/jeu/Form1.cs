@@ -28,6 +28,7 @@ namespace jeu
         private void btnPoints_Click(object sender, EventArgs e)
         {
             InverserBoutons();
+            jeu.genererUnObjet();
         }
 
         void InverserBoutons()
