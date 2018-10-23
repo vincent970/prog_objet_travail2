@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace jeu
 {
-    class Jeton : IPointable
+    abstract class Jeton : IPointable
     {
         public int valeurJeton { get; set; }
         public static Random genrateurJeton = new Random();
