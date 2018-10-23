@@ -18,12 +18,16 @@ namespace jeu
         List<Joueur> lesJoueurs = new List<Joueur>();
         int tour = 0;
 
+        public Joueur JoueurCourant;
+
         public int NumeroTypeObjet
         {
             get { return numeroTypeObjet; }
         }
         public Controleur()
         {
+            ajouterJoueurs();
+            JoueurCourant = lesJoueurs[tour];
         }
 
         public void GenererUnObjet()
@@ -49,6 +53,30 @@ namespace jeu
                 default:
                     throw new Exception("Impossible de créer ce type d'employé");
             }
+        }
+
+        private void ajouterJoueurs()
+        {
+            lesJoueurs.Add(new Joueur("Jessy"));
+            lesJoueurs.Add(new Joueur("Vincent"));
+        }
+
+        public Joueur ObtenirJoueur(int index)
+        {
+            return lesJoueurs[index - 1];
+        }
+
+        public void prochainJoueur()
+        {
+            tour = (tour + 1) % lesJoueurs.Count();
+            JoueurCourant = lesJoueurs[tour];
+        }
+
+        public void genererUnObjet()
+        {
+            Array values = Enum.GetValues(typeof(TypeObjet));
+            Random random = new Random();
+            TypeObjet randomBar = (TypeObjet)values.GetValue(random.Next(values.Length));
         }
 
     }

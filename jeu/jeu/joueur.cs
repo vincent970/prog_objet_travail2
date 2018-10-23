@@ -8,14 +8,21 @@ namespace jeu
 {
     class Joueur
     {
-        String nom;
+        public String Nom { get; protected set; }
         int pointsCumulatifs;
+
+        
 
         public Joueur()
         {
-            nom = "";
+            Nom = "";
             pointsCumulatifs = 0;
         }
 
+        public Joueur(string nom)
+        {
+            Nom = nom;
+            pointsCumulatifs = 0;
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace jeu
         public Form1()
         {
             InitializeComponent();
+            afficherJoueurs();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,12 +41,21 @@ namespace jeu
         private void btnSuivant_Click(object sender, EventArgs e)
         {
             InverserBoutons();
+            jeu.prochainJoueur();
+            labelTour.Text = jeu.JoueurCourant.Nom;
         }
 
         private void AfficherInformationsObjet()
         {
             labelValeur.Text = jeu.objetCourant.Points.ToString();
             labelType.Text = jeu.nomTypeObjet[jeu.NumeroTypeObjet];
+        }
+
+        private void afficherJoueurs()
+        {
+            labelJ1.Text = jeu.ObtenirJoueur(1).Nom;
+            labelJ2.Text = jeu.ObtenirJoueur(2).Nom;
+            labelTour.Text = jeu.JoueurCourant.Nom;
         }
 
     }
