@@ -27,6 +27,8 @@ namespace jeu
         private void btnPoints_Click(object sender, EventArgs e)
         {
             InverserBoutons();
+            jeu.GenererUnObjet();
+            AfficherInformationsObjet();
         }
 
         void InverserBoutons()
@@ -38,6 +40,12 @@ namespace jeu
         private void btnSuivant_Click(object sender, EventArgs e)
         {
             InverserBoutons();
+        }
+
+        private void AfficherInformationsObjet()
+        {
+            labelValeur.Text = jeu.objetCourant.Points.ToString();
+            labelType.Text = jeu.nomTypeObjet[jeu.NumeroTypeObjet];
         }
 
     }

@@ -8,15 +8,15 @@ namespace jeu
 {
     class JetonPositif:Jeton
     {
-        JetonPositif()
+        
+        public JetonPositif():base()
         {
             GenererValeur();
         }
 
         public override void GenererValeur()
         {
-
-            int valeurJeton = genrateurJeton.Next(5) + 50;
+            valeurJeton = genrateurJeton.Next(50) + 5;
         }
     }
 }
