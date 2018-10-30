@@ -48,7 +48,6 @@
     <Compile Include="carte.cs" />
     <Compile Include="controleur.cs" />
     <Compile Include="de.cs" />
-    <Compile Include="fabriqueObjet.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

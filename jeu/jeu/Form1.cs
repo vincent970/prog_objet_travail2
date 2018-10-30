@@ -27,9 +27,7 @@ namespace jeu
 
         private void btnPoints_Click(object sender, EventArgs e)
         {
-            InverserBoutons();
-            jeu.GenererUnObjet();
-            AfficherInformationsObjet();
+            jouerUnTour();
         }
 
         void InverserBoutons()
@@ -45,10 +43,33 @@ namespace jeu
             labelTour.Text = jeu.JoueurCourant.Nom;
         }
 
-        private void AfficherInformationsObjet()
+        private void attribuerPointsAuJoueurCourant()
         {
-            labelValeur.Text = jeu.objetCourant.Points.ToString();
-            labelType.Text = jeu.nomTypeObjet[jeu.NumeroTypeObjet];
+
+        }
+
+        private void jouerUnTour()
+        {
+            InverserBoutons();
+            jeu.genererUnObjet();
+            jeu.ajouterPointsAuJoueurCourant();
+            afficherInformationsObjet();
+            afficherPointsJoueurs();
+            
+        }
+
+        private void afficherPointsJoueurs()
+        {
+            labelPtsJ1.Text = jeu.lesJoueurs[0].PointsCumulatifs.ToString();
+            labelPtsJ2.Text = jeu.lesJoueurs[1].PointsCumulatifs.ToString();
+
+        }
+
+        private void afficherInformationsObjet()
+        {
+            labelValeur.Text = jeu.objetCourant.Points.ToString();            
+            labelType.Text = jeu.nomTypeObjet[1];
+            
         }
 
         private void afficherJoueurs()

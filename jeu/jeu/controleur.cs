@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,48 +11,56 @@ namespace jeu
         public enum TypeObjet { De, Carte, JetonPositif, JetonNegatif }
         public string[] nomTypeObjet = { "De", "Carte", "JetonPositif", "JetonNegatif" };
         public IPointable objetCourant;
-        int numeroTypeObjet;
+        int indexTypeObjetCourant;
 
         static Random generateurPoints = new Random();
 
-        List<Joueur> lesJoueurs = new List<Joueur>();
+        public List<Joueur> lesJoueurs = new List<Joueur>();
         int tour = 0;
 
         public Joueur JoueurCourant;
 
-        public int NumeroTypeObjet
+        public int IndexTypeObjetCourant
         {
-            get { return numeroTypeObjet; }
+            get { return indexTypeObjetCourant; }
         }
+
         public Controleur()
         {
             ajouterJoueurs();
             JoueurCourant = lesJoueurs[tour];
         }
 
-        public void GenererUnObjet()
-        {          
-            Random generateurTypeObjet = new Random();
-            numeroTypeObjet = generateurTypeObjet.Next(3)+0;
-            
-            //objetCourant = fabriqueObjet.creerObjet(typeObjet);            
-            switch (numeroTypeObjet)
+        public void genererUnObjet()
+        {
+            Array values = Enum.GetValues(typeof(TypeObjet));
+            Random random = new Random();
+            TypeObjet randomTypeObjet = (TypeObjet)values.GetValue(random.Next(values.Length));          
             {
-                case 0:
-                    objetCourant = new De();
-                break;
-                case 1:
-                    objetCourant = new Carte();
-                break;
-                case 2:
-                    objetCourant = new JetonPositif();
-                break;
-                case 3:
-                    objetCourant = new JetonNegatif();
-                    break;
-                default:
-                    throw new Exception("Impossible de créer ce type d'employé");
+                objetCourant = null;
+                switch (randomTypeObjet)
+                {
+                    case TypeObjet.De:
+                        objetCourant = new De();
+                        break;
+                    case TypeObjet.Carte:
+                        objetCourant = new Carte();
+                        break;
+                    case TypeObjet.JetonPositif:
+                        objetCourant = new JetonPositif();
+                        break;
+                    case TypeObjet.JetonNegatif:
+                        objetCourant = new JetonNegatif();
+                        break;
+                    default:
+                        throw new Exception("Impossible de créer ce type d'employé");
+                }
             }
+        }
+
+        public void ajouterPointsAuJoueurCourant()
+        {
+            JoueurCourant.ajouterPoints(objetCourant.Points);
         }
 
         private void ajouterJoueurs()
@@ -70,13 +78,6 @@ namespace jeu
         {
             tour = (tour + 1) % lesJoueurs.Count();
             JoueurCourant = lesJoueurs[tour];
-        }
-
-        public void genererUnObjet()
-        {
-            Array values = Enum.GetValues(typeof(TypeObjet));
-            Random random = new Random();
-            TypeObjet randomBar = (TypeObjet)values.GetValue(random.Next(values.Length));
         }
 
     }

@@ -11,7 +11,10 @@ namespace jeu
         public String Nom { get; protected set; }
         int pointsCumulatifs;
 
-        
+        public int PointsCumulatifs
+        {
+            get { return pointsCumulatifs; }
+        }
 
         public Joueur()
         {
@@ -23,6 +26,10 @@ namespace jeu
         {
             Nom = nom;
             pointsCumulatifs = 0;
+        }
+
+        public void ajouterPoints(int points) {
+            pointsCumulatifs += points;
         }
     }
 }
