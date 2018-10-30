@@ -43,11 +43,6 @@ namespace jeu
             labelTour.Text = jeu.JoueurCourant.Nom;
         }
 
-        private void attribuerPointsAuJoueurCourant()
-        {
-
-        }
-
         private void jouerUnTour()
         {
             InverserBoutons();
@@ -68,7 +63,7 @@ namespace jeu
         private void afficherInformationsObjet()
         {
             labelValeur.Text = jeu.objetCourant.Points.ToString();            
-            labelType.Text = jeu.nomTypeObjet[1];
+            labelType.Text = jeu.nomTypeObjet[jeu.IndexTypeObjetCourant];
             
         }
 

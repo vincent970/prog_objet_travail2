@@ -42,15 +42,19 @@ namespace jeu
                 {
                     case TypeObjet.De:
                         objetCourant = new De();
+                        indexTypeObjetCourant = 0;
                         break;
                     case TypeObjet.Carte:
                         objetCourant = new Carte();
+                        indexTypeObjetCourant = 1;
                         break;
                     case TypeObjet.JetonPositif:
                         objetCourant = new JetonPositif();
+                        indexTypeObjetCourant = 2;
                         break;
                     case TypeObjet.JetonNegatif:
                         objetCourant = new JetonNegatif();
+                        indexTypeObjetCourant = 3;
                         break;
                     default:
                         throw new Exception("Impossible de créer ce type d'employé");
