@@ -10,10 +10,14 @@ namespace jeu
     {
         public String Nom { get; protected set; }
         int pointsCumulatifs;
-
+        List<IPointable> objets = new List<IPointable>();
         public int PointsCumulatifs
         {
             get { return pointsCumulatifs; }
+        }
+        public List<IPointable> Objets
+        {
+            get { return objets; }
         }
 
         public Joueur()
@@ -30,6 +34,11 @@ namespace jeu
 
         public void ajouterPoints(int points) {
             pointsCumulatifs += points;
+        }
+
+        public void ajouterObjet(IPointable objetAAjouter)
+        {
+            objets.Add(objetAAjouter);
         }
     }
 }

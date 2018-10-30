@@ -62,9 +62,21 @@ namespace jeu
             }
         }
 
+        public void jouerUnTour()
+        {
+            genererUnObjet();
+            ajouterPointsAuJoueurCourant();
+            ajouterObjetAuJoueurCourant();
+        }
+
         public void ajouterPointsAuJoueurCourant()
         {
             JoueurCourant.ajouterPoints(objetCourant.Points);
+        }
+
+        public void ajouterObjetAuJoueurCourant()
+        {
+            JoueurCourant.ajouterObjet(objetCourant);
         }
 
         private void ajouterJoueurs()

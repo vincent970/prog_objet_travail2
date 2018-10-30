@@ -46,8 +46,7 @@ namespace jeu
         private void jouerUnTour()
         {
             InverserBoutons();
-            jeu.genererUnObjet();
-            jeu.ajouterPointsAuJoueurCourant();
+            jeu.jouerUnTour();
             afficherInformationsObjet();
             afficherPointsJoueurs();
             
