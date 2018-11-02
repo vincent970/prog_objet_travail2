@@ -15,6 +15,10 @@ namespace jeu
             get { return valeurJeton; }
         }
 
+        virtual public string Type {
+            get { return ""; }
+        }
+
         public virtual void GenererValeur() { }
     }
 }

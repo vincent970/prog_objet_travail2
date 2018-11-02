@@ -34,6 +34,11 @@ namespace jeu
             get { return valeurCarte; }
         }
 
+        virtual public string Type
+        {
+            get { return "Carte"; }
+        }
+
         public Carte()
         {
             GenererCarte();

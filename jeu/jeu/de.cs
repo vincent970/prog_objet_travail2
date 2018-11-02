@@ -43,7 +43,13 @@ namespace jeu
         }
 
         public int Points
-        { get { return valeurDe; }
+        {
+            get { return valeurDe; }
+        }
+
+        virtual public string Type
+        {
+            get { return "Dé"; }
         }
 
         public De()

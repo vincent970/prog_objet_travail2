@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace jeu
 {
-    interface IPointable
+    interface IPointable : INommable
     {       
         int Points { get;  }
     }

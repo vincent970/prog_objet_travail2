@@ -40,6 +40,8 @@
             this.labelType = new System.Windows.Forms.Label();
             this.labelValeur = new System.Windows.Forms.Label();
             this.btnSuivant = new System.Windows.Forms.Button();
+            this.lstObjets = new System.Windows.Forms.ListBox();
+            this.btnAfficherObjets = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelJ1
@@ -90,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(209, 82);
+            this.label1.Location = new System.Drawing.Point(224, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 4;
@@ -101,7 +103,7 @@
             // 
             this.labelTour.AutoSize = true;
             this.labelTour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTour.Location = new System.Drawing.Point(276, 82);
+            this.labelTour.Location = new System.Drawing.Point(291, 9);
             this.labelTour.Name = "labelTour";
             this.labelTour.Size = new System.Drawing.Size(35, 17);
             this.labelTour.TabIndex = 5;
@@ -110,7 +112,7 @@
             // 
             // btnPoints
             // 
-            this.btnPoints.Location = new System.Drawing.Point(201, 113);
+            this.btnPoints.Location = new System.Drawing.Point(216, 40);
             this.btnPoints.Name = "btnPoints";
             this.btnPoints.Size = new System.Drawing.Size(121, 23);
             this.btnPoints.TabIndex = 6;
@@ -122,7 +124,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(188, 163);
+            this.label2.Location = new System.Drawing.Point(203, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 7;
@@ -133,7 +135,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(188, 195);
+            this.label3.Location = new System.Drawing.Point(203, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 8;
@@ -144,7 +146,7 @@
             // 
             this.labelType.AutoSize = true;
             this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelType.Location = new System.Drawing.Point(304, 163);
+            this.labelType.Location = new System.Drawing.Point(319, 90);
             this.labelType.Name = "labelType";
             this.labelType.Size = new System.Drawing.Size(35, 17);
             this.labelType.TabIndex = 9;
@@ -155,7 +157,7 @@
             // 
             this.labelValeur.AutoSize = true;
             this.labelValeur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelValeur.Location = new System.Drawing.Point(304, 195);
+            this.labelValeur.Location = new System.Drawing.Point(319, 122);
             this.labelValeur.Name = "labelValeur";
             this.labelValeur.Size = new System.Drawing.Size(47, 17);
             this.labelValeur.TabIndex = 10;
@@ -164,7 +166,7 @@
             // 
             // btnSuivant
             // 
-            this.btnSuivant.Location = new System.Drawing.Point(201, 240);
+            this.btnSuivant.Location = new System.Drawing.Point(216, 167);
             this.btnSuivant.Name = "btnSuivant";
             this.btnSuivant.Size = new System.Drawing.Size(121, 23);
             this.btnSuivant.TabIndex = 11;
@@ -172,11 +174,31 @@
             this.btnSuivant.UseVisualStyleBackColor = true;
             this.btnSuivant.Click += new System.EventHandler(this.btnSuivant_Click);
             // 
+            // lstObjets
+            // 
+            this.lstObjets.FormattingEnabled = true;
+            this.lstObjets.Location = new System.Drawing.Point(127, 225);
+            this.lstObjets.Name = "lstObjets";
+            this.lstObjets.Size = new System.Drawing.Size(308, 108);
+            this.lstObjets.TabIndex = 12;
+            // 
+            // btnAfficherObjets
+            // 
+            this.btnAfficherObjets.Location = new System.Drawing.Point(206, 196);
+            this.btnAfficherObjets.Name = "btnAfficherObjets";
+            this.btnAfficherObjets.Size = new System.Drawing.Size(148, 23);
+            this.btnAfficherObjets.TabIndex = 13;
+            this.btnAfficherObjets.Text = "Afficher les objets obtenus";
+            this.btnAfficherObjets.UseVisualStyleBackColor = true;
+            this.btnAfficherObjets.Click += new System.EventHandler(this.btnAfficherObjets_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(562, 328);
+            this.ClientSize = new System.Drawing.Size(562, 341);
+            this.Controls.Add(this.btnAfficherObjets);
+            this.Controls.Add(this.lstObjets);
             this.Controls.Add(this.btnSuivant);
             this.Controls.Add(this.labelValeur);
             this.Controls.Add(this.labelType);
@@ -211,6 +233,8 @@
         private System.Windows.Forms.Label labelType;
         private System.Windows.Forms.Label labelValeur;
         private System.Windows.Forms.Button btnSuivant;
+        private System.Windows.Forms.ListBox lstObjets;
+        private System.Windows.Forms.Button btnAfficherObjets;
     }
 }
 

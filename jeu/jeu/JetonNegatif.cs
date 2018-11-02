@@ -8,7 +8,11 @@ namespace jeu
 {
     class JetonNegatif:Jeton
     {
-        
+        public override string Type
+        {
+            get { return "Jeton Négatif"; }
+        }
+
         public JetonNegatif():base()
         {
             GenererValeur();

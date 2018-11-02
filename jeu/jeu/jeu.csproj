@@ -54,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="inommable.cs" />
     <Compile Include="ipointable.cs" />
     <Compile Include="Jeton.cs" />
     <Compile Include="JetonNegatif.cs" />

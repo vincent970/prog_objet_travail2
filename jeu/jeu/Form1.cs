@@ -28,6 +28,7 @@ namespace jeu
         private void btnPoints_Click(object sender, EventArgs e)
         {
             jouerUnTour();
+            btnSuivant.Focus();
         }
 
         void InverserBoutons()
@@ -41,6 +42,14 @@ namespace jeu
             InverserBoutons();
             jeu.prochainJoueur();
             labelTour.Text = jeu.JoueurCourant.Nom;
+            viderListeObjets(lstObjets);
+            btnPoints.Focus();
+        }
+
+        private void btnAfficherObjets_Click(object sender, EventArgs e)
+        {
+            viderListeObjets(lstObjets);
+            afficherObjetsJoueurCourant(lstObjets);
         }
 
         private void jouerUnTour()
@@ -62,8 +71,7 @@ namespace jeu
         private void afficherInformationsObjet()
         {
             labelValeur.Text = jeu.objetCourant.Points.ToString();            
-            labelType.Text = jeu.nomTypeObjet[jeu.IndexTypeObjetCourant];
-            
+            labelType.Text = jeu.objetCourant.Type;            
         }
 
         private void afficherJoueurs()
@@ -73,5 +81,19 @@ namespace jeu
             labelTour.Text = jeu.JoueurCourant.Nom;
         }
 
+        private void afficherObjetsJoueurCourant(ListBox listeObjets)
+        {
+            int counter = 1;
+            foreach (IPointable objets in jeu.JoueurCourant.ListeObjets)
+            {
+                listeObjets.Items.Add(counter + ": " + objets.Type + " d'une valeur de " + objets.Points.ToString() + " Points");
+                counter++;
+            }
+        }
+
+        private void viderListeObjets(ListBox listeObjets)
+        {
+            listeObjets.Items.Clear();
+        }
     }
 }
